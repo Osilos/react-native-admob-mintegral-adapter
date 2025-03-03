@@ -2,6 +2,7 @@ package com.admobmintegraladapter
 
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.module.annotations.ReactModule
+import com.mbridge.msdk.out.MBridgeSDKFactory
 
 @ReactModule(name = AdmobMintegralAdapterModule.NAME)
 class AdmobMintegralAdapterModule(reactContext: ReactApplicationContext) :
@@ -10,11 +11,9 @@ class AdmobMintegralAdapterModule(reactContext: ReactApplicationContext) :
   override fun getName(): String {
     return NAME
   }
-
-  // Example method
-  // See https://reactnative.dev/docs/native-modules-android
-  override fun multiply(a: Double, b: Double): Double {
-    return a * b
+  override fun setConsent(consent: Boolean) {
+    MBridgeSDK sdk = MBridgeSDKFactory.getMBridgeSDK();
+    sdk.setConsentStatus(context, MBridgeConstans.IS_SWITCH_ON);
   }
 
   companion object {

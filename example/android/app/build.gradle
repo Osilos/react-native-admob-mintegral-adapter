@@ -107,6 +107,12 @@ android {
     }
 }
 
+repositories {
+    maven {
+        url = uri("https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea")
+    }
+}
+
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")

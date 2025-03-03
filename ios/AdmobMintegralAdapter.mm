@@ -1,12 +1,11 @@
 #import "AdmobMintegralAdapter.h"
+#import <MTGSDK/MTGSDK.h>
 
 @implementation AdmobMintegralAdapter
 RCT_EXPORT_MODULE()
 
-- (NSNumber *)multiply:(double)a b:(double)b {
-    NSNumber *result = @(a * b);
-
-    return result;
+- (void) setConsent:(BOOL)value {
+  [[MTGSDK sharedInstance] setConsentStatus:YES];
 }
 
 - (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:

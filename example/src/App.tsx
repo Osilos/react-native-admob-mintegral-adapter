@@ -1,12 +1,15 @@
-import { Text, View, StyleSheet } from 'react-native';
-import { multiply } from 'react-native-admob-mintegral-adapter';
-
-const result = multiply(3, 7);
+import { Text, View, StyleSheet, Pressable } from 'react-native';
+import AdmobMintegralAdapter from 'react-native-admob-mintegral-adapter';
 
 export default function App() {
+  const setConsentIronSource = () => {
+    AdmobMintegralAdapter.setConsent(true);
+  };
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Pressable onPress={setConsentIronSource}>
+        <Text>Press to send consent.</Text>
+      </Pressable>
     </View>
   );
 }
