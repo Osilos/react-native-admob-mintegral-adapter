@@ -12,11 +12,10 @@ npm install react-native-admob-mintegral-adapter
 
 
 ```js
-import { multiply } from 'react-native-admob-mintegral-adapter';
+import AdmobMintegralAdapter from 'react-native-admob-mintegral-adapter';
 
-// ...
 
-const result = multiply(3, 7);
+AdmobMintegralAdapter.setConsent(true);
 ```
 
 
